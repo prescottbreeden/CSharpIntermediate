@@ -6,7 +6,6 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             // Anatomy of a class: Data and Methods
             // Class Name
             // Data Names and types
@@ -19,8 +18,13 @@ namespace CSharpIntermediate
 
             // Object is an instance of a class that resides in memory
 
-            Person bob = new Person("bob", 36);
-            bob.Introduce();
+            //Person bob = new Person("Bob", 36);
+            var bob = Person.Parse("Bob");
+            bob.Introduce("Sally");
+
+            var customer = new Customer(1, "John");
+            customer.Print();
+            customer.NewOrder(1, 20.99);
         }
     }
 }

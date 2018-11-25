@@ -5,16 +5,23 @@
         private string Name { get; set; }
         private int Age { get; set; }
 
-        public Person(string name, int age)
+        public void Introduce(string to)
         {
-            Name = name;
-            Age = age;
+            System.Console.WriteLine("Hello {0}, my name is {1}", to, Name);
         }
 
-        public void Introduce()
+        public static Person Parse(string str)
         {
-            System.Console.WriteLine("Hi, my name is " + Name);
+            Person person = new Person();
+            person.Name = str;
+
+            return person;
         }
 
+        //public Person(string name, int age)
+        //{
+        //    Name = name;
+        //    Age = age;
+        //}
     }
 }
