@@ -1,9 +1,33 @@
-﻿namespace CSharpIntermediate
+﻿using System;
+
+namespace CSharpIntermediate
 {
     public class Person
     {
-        private string Name { get; set; }
-        private int Age { get; set; }
+        public string Name { get; private set; }
+        private DateTime _birthdate;
+
+        public int Age
+        {
+            get
+            {
+                var timeSpan = DateTime.Today - _birthdate;
+                var years = timeSpan.Days / 365;
+
+                return years;
+            }
+        }
+
+        public void SetBirthdate(DateTime birthdate)
+        {
+            _birthdate = birthdate;
+        }
+
+        public DateTime GetBirthdate()
+        {
+            return _birthdate;
+        }
+
 
         public void Introduce(string to)
         {

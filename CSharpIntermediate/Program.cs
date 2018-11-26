@@ -6,7 +6,7 @@ namespace CSharpIntermediate
     {
         static void Main(string[] args)
         {
-            Points();
+            Stuff();
         }
 
         public static void Points()
@@ -23,6 +23,8 @@ namespace CSharpIntermediate
         {
             //Person bob = new Person("Bob", 36);
             var bob = Person.Parse("Bob");
+            bob.SetBirthdate(new DateTime(1982, 1, 1));
+            Console.WriteLine(bob.GetBirthdate());
             bob.Introduce("Sally");
 
             var customer = new Customer(1, "John");
