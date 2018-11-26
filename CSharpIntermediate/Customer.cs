@@ -6,25 +6,22 @@ namespace CSharpIntermediate
     {
         private int Id { get; set; }
         private string Name { get; set; }
-        private List<Order> Orders { get; set; }
+        private readonly List<Order> Orders = new List<Order>();
 
-        // too many constructors with this links - not very readable and poor to maintain
-        public Customer()
-        {
-            Orders = new List<Order>();
-        }
-
-        public Customer(string name)
-            : this()
-        {
-            Name = name;
-        }
-
-        public Customer(int id, string name)
-            : this()
+        public Customer(int id)
         {
             Id = id;
+        }
+
+        public Customer(int id, string name) : this(id)
+        {
             Name = name;
+        }
+
+        public void Promote()
+        {
+           // ... 
+           // Orders = new List<Order>(); <~~ cannot accidentally re-initialize because porperty is read only
         }
 
         public void Print()

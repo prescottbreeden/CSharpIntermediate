@@ -5,10 +5,7 @@
         private int Id { get; set; }
         private double Price { get; set; }
 
-        public Order()
-        {
-
-        }
+        public Order() { }
 
         public Order(int id, double price)
         {
