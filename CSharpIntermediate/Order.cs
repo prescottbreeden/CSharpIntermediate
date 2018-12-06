@@ -1,24 +1,24 @@
-﻿namespace CSharpIntermediate
+﻿using System;
+
+namespace CSharpIntermediate
 {
-    internal class Order
+  public class Order
+  {
+      public int Id { get; set; }
+    public bool IsShipped
     {
-        private int Id { get; set; }
-        private double Price { get; set; }
-
-        public Order()
-        {
-
-        }
-
-        public Order(int id, double price)
-        {
-            Id = id;
-            Price = price;
-        }
-
-        public override string ToString()
-        {
-            return $"Order Id: {Id}, Price: {Price}";
-        }
+      get { return Shipment != null; }
     }
+    public DateTime DatePlaced { get; set; }
+    public float TotalPrice { get; set; }
+    public Shipment Shipment { get; set; }
+
+
+    public Order() { }
+    public void Process(Order newOrder)
+    {
+      System.Console.WriteLine(newOrder);
+    }
+
+  }
 }
