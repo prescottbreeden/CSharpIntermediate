@@ -1,19 +1,21 @@
 namespace CSharpIntermediate
 {
-  class Calculator
-  {
-    private int total {get; set;}
-    public Calculator() 
-    { 
-      total = 0;
+    class Calculator
+    {
+        private int Total { get; set; }
+
+        public Calculator()
+        {
+            Total = 0;
+        }
+
+        public int Add(params int[] numbers)
+        {
+            Total = 0;
+            foreach (int num in numbers)
+                Total += num;
+
+            return Total;
+        }
     }
-    public int Add(params int[] numbers) 
-    { 
-      total = 0;
-      foreach (int num in numbers) {
-        total += num;
-      }
-      return total;
-    }
-  }
 }
