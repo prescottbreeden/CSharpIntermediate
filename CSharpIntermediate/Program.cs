@@ -8,10 +8,13 @@ namespace CSharpIntermediate
   {
     static void Main(string[] args)
     {
+
+    }
+    public static void ImplementExtendedInterface()
+    {
       // var dbMigrator = new DbMigrator(new ConsoleLogger());
       var dbMigrator = new DbMigrator(new FileLogger("./log.txt"));
       dbMigrator.Migrate();
-
     }
     public static void CreateOrder() 
     {
